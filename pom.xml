@@ -3,6 +3,14 @@
   <groupId>422-Project-Deliverable-1</groupId>
   <artifactId>422-Project-Deliverable-1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+      	<version>5.4.0</version>
+      	<scope>test</scope>
+	</dependency>
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
