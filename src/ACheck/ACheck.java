@@ -49,7 +49,7 @@ public class ACheck extends AbstractCheck {
 		operators += 1;
 		
 		// Output incremented and logged to console
-		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found! Count Operators: %s, Operands: %s", operators, operands));
+		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found, integer type: %s! Count Operators: %s, Operands: %s", ast.getType(), operators, operands));
 	}
 
 	@Override
