@@ -7,6 +7,12 @@ public class BCheck extends AbstractCheck {
 	
 	// Number of comments
 	private int numComments = 0;
+	
+	// Error-fix for unexpected override
+	@Override
+	public boolean isCommentNodesRequired() {
+		return true;
+	}
 
 	@Override
 	public int[] getDefaultTokens() {
