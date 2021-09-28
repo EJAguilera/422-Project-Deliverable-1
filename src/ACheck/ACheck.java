@@ -2,10 +2,12 @@ package ACheck;
 
 import com.puppycrawl.tools.checkstyle.api.*;
 
+// A limited implementation of the Halstead Length.
 public class ACheck extends AbstractCheck {
 	
 	private int operators = 0;
 	private int operands = 0;
+	private int halsteadLength = 0;
 
 	@Override
 	public int[] getDefaultTokens() {
@@ -48,8 +50,11 @@ public class ACheck extends AbstractCheck {
 		// For every operator
 		operators += 1;
 		
+		// Computes new Halstead Length
+		halsteadLength = operators + operands;
+		
 		// Output incremented and logged to console
-		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found, integer type: %s! Count Operators: %s, Operands: %s", ast.getType(), operators, operands));
+		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found, integer type: %s! Count Operators: %s, Operands: %s, Halstead-Length now: %s!", ast.getType(), operators, operands, halsteadLength));
 	}
 
 	@Override
