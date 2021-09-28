@@ -52,9 +52,6 @@ public class ACheck extends AbstractCheck {
 		
 		// Computes new Halstead Length
 		halsteadLength = operators + operands;
-		
-		// Output incremented and logged to console
-		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found, integer type: %s! Count Operators: %s, Operands: %s, Halstead-Length now: %s!", ast.getType(), operators, operands, halsteadLength));
 	}
 
 	@Override
@@ -84,5 +81,12 @@ public class ACheck extends AbstractCheck {
 	public int[] getRequiredTokens() {
 		// Stubbed for compliance
 		return new int[0];
+	}
+
+	// Automatically log 'violation' for display purposes 
+	@Override
+	public void finishTree(DetailAST root) {
+		// Output incremented and logged to console
+		log(root, String.format("EJA ACHECK: Halstead Length: %s", halsteadLength));
 	}
 }

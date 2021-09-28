@@ -43,8 +43,12 @@ public class BCheck extends AbstractCheck {
 		
 		// Increment number of comments
 		numComments += 1;
-		
+	}
+	
+	// Automatically log 'violation' for display purposes 
+	@Override
+	public void finishTree(DetailAST root) {
 		// Output incremented and logged to console
-		log(ast.getLineNo(), String.format("EJA ACHECK: New comment found! Integer type: %s! Number of comments now: %s!", ast.getType(), numComments));
+		log(root, String.format("EJA BCHECK: Number of comments: %s", numComments));
 	}
 }
