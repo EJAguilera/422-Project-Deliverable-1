@@ -3,11 +3,33 @@ package ACheck;
 import com.puppycrawl.tools.checkstyle.api.*;
 
 public class ACheck extends AbstractCheck {
+	
+	public int operators = 0;
+	public int operands = 0;
 
 	@Override
 	public int[] getDefaultTokens() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public void visitToken(DetailAST aAST) {
+		// If operator is a special type, it has only one operand
+		switch (aAST.getType()) {
+			case TokenTypes.INC:
+			case TokenTypes.POST_INC:
+			case TokenTypes.DEC:
+			case TokenTypes.POST_DEC:
+			case TokenTypes.UNARY_MINUS:
+			case TokenTypes.UNARY_PLUS:
+				operands += 1;
+			// Otherwise, it possess the standard two operands
+			default:
+				operands += 2;
+		}
+		// For every operator
+		operators += 1;
 	}
 
 	@Override
