@@ -12,4 +12,7 @@
     <package name="ACheck">
         <package name="dummysubpackage"/>
     </package>
+    <package name="BCheck">
+        <package name="dummysubpackage"/>
+    </package>
 </checkstyle-packages>
