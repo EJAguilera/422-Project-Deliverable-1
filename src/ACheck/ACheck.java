@@ -4,8 +4,8 @@ import com.puppycrawl.tools.checkstyle.api.*;
 
 public class ACheck extends AbstractCheck {
 	
-	public int operators = 0;
-	public int operands = 0;
+	private int operators = 0;
+	private int operands = 0;
 
 	@Override
 	public int[] getDefaultTokens() {
@@ -31,9 +31,9 @@ public class ACheck extends AbstractCheck {
 	}
 	
 	@Override
-	public void visitToken(DetailAST aAST) {
+	public void visitToken(DetailAST ast) {
 		// If operator is a special type, it has only one operand
-		switch (aAST.getType()) {
+		switch (ast.getType()) {
 			case TokenTypes.INC:
 			case TokenTypes.POST_INC:
 			case TokenTypes.DEC:
@@ -47,6 +47,9 @@ public class ACheck extends AbstractCheck {
 		}
 		// For every operator
 		operators += 1;
+		
+		// Output incremented and logged to console
+		log(ast.getLineNo(), String.format("EJA ACHECK: New operator found! Count Operators: %s, Operands: %s", operators, operands));
 	}
 
 	@Override
