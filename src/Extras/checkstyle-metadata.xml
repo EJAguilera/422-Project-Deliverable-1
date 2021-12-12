@@ -6,9 +6,9 @@
     <rule-group-metadata name="demo checks"  priority="1600">
         <description>%MyCustomChecks.desc</description>
         
-        <rule-metadata name="%ACheck.name" internal-name="ACheck.ACheck" parent="TreeWalker">
-            <alternative-name internal-name="ACheck.ACheck" />
-            <description>%ACheck.desc</description>
+        <rule-metadata name="extraChecks.name" internal-name="extraChecks.extraChecks" parent="TreeWalker">
+            <alternative-name internal-name="extraChecks.extraChecks" />
+            <description>%extraChecks.desc</description>
         </rule-metadata>
     </rule-group-metadata>
 </checkstyle-metadata>
