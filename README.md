@@ -37,7 +37,7 @@ Special Note: Pitclipse will only work with this project if project compiler set
 - 5.1 Sum of unique operators, operands is not computed correctly
     - Caught iterator over set error
 
-6. Expression:
+6. Number-Expressions:
 - Truly bizarre error, it will run the check with the black-box, but not the white-box coverage test
 - 6.1 Expression token is ignored for unknown reason
     - All expression tokens counted
@@ -47,7 +47,7 @@ Special Note: Pitclipse will only work with this project if project compiler set
 7. GetComments:
 - Unfortunately could not figure out appropriate configuration and context for comments, test engine wouldn't run the black-box.
 - 7.1 Comment tokens are ignored for unknown reason
-- 7.2 Block comment line numbers are not computed corrently,
+- 7.2 Block comment line numbers are not computed correctly
 
 8. GetOperators:
 - 8.1 Operator token is ignored for unknown reason
